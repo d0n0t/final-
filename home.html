@@ -11,4 +11,19 @@ if (!empty($_GET['token'])) {
 }
 
 ?>
-<a href="?token=1">xam study papers</a>
+<body style="margin:0">
+<script src="https://cdn.jsdelivr.net/clappr/latest/clappr.min.js"></script>
+<script src="https://cdn.jsdelivr.net/clappr.level-selector/latest/level-selector.min.js"></script>
+<script src="https://cdn.jsdelivr.net/clappr.chromecast-plugin/latest/clappr-chromecast-plugin.js"></script>
+<div id="player"></div>
+<script>
+    var player = new Clappr.Player({
+source: "?token=1",
+   mimeType: "application/x-mpegURL",
+plugins: [LevelSelector, ChromecastPlugin],
+parentId: "#player",
+height: "100%",
+width: "100%",
+autoPlay: true,
+});
+</script>
